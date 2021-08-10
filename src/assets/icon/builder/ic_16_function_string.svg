@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic_16_function text</title>
+    <g id="Calculated" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="V6_Chart-Builder_Setting_1.0" transform="translate(-56.000000, -204.000000)">
+            <g id="Group-7" transform="translate(16.000000, 60.000000)">
+                <g id="Group-22" transform="translate(16.000000, 49.000000)">
+                    <g id="ic_16_function-text" transform="translate(24.000000, 95.000000)">
+                        <rect id="Rectangle" x="0" y="0" width="16" height="16" rx="2"></rect>
+                        <g id="function" transform="translate(1.000000, 2.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <path d="M6,0 C6,0 4.425,0 3.975,2.25 L3.675,3.75 L2.25,3.75 L1.875,4.5 L3.525,4.5 L2.475,9.75 C2.175,11.25 1.05,11.25 1.05,11.25 L0.3,11.25 L0,12 L2.25,12 C2.25,12 3.825,12 4.275,9.75 L5.325,4.5 L7.125,4.5 L7.5,3.75 L5.475,3.75 L5.775,2.25 C6.075,0.75 7.125,0.75 7.125,0.75 L7.875,0.75 L8.25,0 L6,0 Z" id="Path"></path>
+                            <g id="text" transform="translate(7.000000, 5.000000)">
+                                <path d="M1.9453125,5.296875 L1.30897522,5.296875 L1.6851654,4.04296875 L3.50976562,4.04296875 L3.9632721,5.296875 L3.3515625,5.296875 L3.3515625,6 L6,6 L6,5.296875 L5.4609375,5.296875 L3.3515625,0 L2.296875,0 L0.5390625,5.296875 L0,5.296875 L0,6 L1.9453125,6 L1.9453125,5.296875 Z M2.51486205,1.54335022 L3.20741272,3.33984375 L1.93473816,3.33984375 L2.51486205,1.54335022 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

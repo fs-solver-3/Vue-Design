@@ -1,0 +1,101 @@
+/*!
+ * @author: tvc12 - Thien Vi
+ * @created: 4/19/21, 1:46 PM
+ */
+
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+@import '~@/themes/scss/mixin.scss';
+
+.database-listing {
+  padding: 16px;
+
+  .header-bar {
+    align-items: center;
+    display: flex;
+    flex-shrink: 1;
+    text-align: left;
+
+    label {
+      @include semi-bold-text();
+      font-size: 14px;
+      letter-spacing: 0.6px;
+      margin: 0;
+    }
+
+    img {
+      margin-left: auto;
+    }
+  }
+
+  .database-selector {
+    margin-top: 16px;
+
+    ::v-deep {
+      .select-container > .relative > span > button {
+        background-color: var(--charcoal);
+
+        div > span {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .schema-listing {
+    margin-top: 24px;
+    @include media-breakpoint-down(lg) {
+    }
+
+    .nav-scroll {
+      margin-bottom: 24px;
+
+      ::v-deep {
+        .nav {
+          > div {
+            width: 100%;
+          }
+
+          .sl-vue-tree-nodes-list {
+            > .sl-vue-tree-node {
+              > .sl-vue-tree-node-is-folder {
+                padding: 5px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .icon-create-field {
+      float: right;
+      padding: 4px;
+      margin: 0 8px 0 0;
+
+      > img {
+        height: 12px;
+        width: 12px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.search-input {
+  background: var(--secondary);
+  padding-left: 10px;
+  height: 36px;
+  width: 100%;
+  padding-right: 30px;
+}
+
+.search-btn {
+  padding: 7.5px;
+}
+
+.close-search-btn {
+  right: 15px;
+  width: 35px;
+  height: 35px;
+}

@@ -1,0 +1,84 @@
+@import '~@/themes/scss/mixin.scss';
+
+.setting-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  &.toggle-setting {
+    flex-direction: row;
+    height: 27px;
+    align-items: center;
+  }
+
+  &.dropdown-setting {
+    height: unset;
+    .selection {
+      margin-top: 0;
+
+      &.small {
+        width: 64px;
+      }
+
+      &.full {
+        width: 100%;
+      }
+
+      > .relative > span > button > div {
+        height: 31px;
+      }
+    }
+  }
+
+  .label {
+    @include regular-text12-unselect();
+    //cursor: pointer !important;
+    opacity: 0.6;
+    padding: 0;
+    margin: 0;
+
+    &.small {
+    }
+  }
+
+  .color-component {
+    &.half {
+      width: 145px;
+    }
+    &.small {
+      width: 115px;
+    }
+
+    &.full {
+      width: 100%;
+    }
+  }
+
+  .form-control {
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+  }
+}
+
+.revert-button {
+  @include regular-text-14();
+  color: var(--accent);
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  cursor: pointer;
+}
+
+div.disabled-setting {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.2;
+}

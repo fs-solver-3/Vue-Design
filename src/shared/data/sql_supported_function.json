@@ -1,0 +1,3326 @@
+{
+  "supported_functions": [
+    "Keyword",
+    "Arithmetic",
+    "Array",
+    "Conversion",
+    "Replace in Strings",
+    "Files",
+    "Mathematical",
+    "Rounding",
+    "Working with maps",
+    "Splitting and Merging Strings and Arrays",
+    "Bit",
+    "Bitmap",
+    "Hash",
+    "Random Numbers And Strings",
+    "Encoding",
+    "UUID",
+    "IP Addresses",
+    "JSON",
+    "External Dictionaries",
+    "Geographical Coordinates",
+    "GeoHash",
+    "H3 Indexes",
+    "Nullable",
+    "Machine Learning",
+    "Introspection",
+    "Tuples",
+    "Encryption",
+    "Other",
+    "Aggregate",
+    "Table"
+  ],
+  "Keyword": [
+    {
+      "name": "all",
+      "description": ""
+    },
+    {
+      "name": "by",
+      "description": ""
+    },
+    {
+      "name": "array",
+      "description": ""
+    },
+    {
+      "name": "select",
+      "description": ""
+    },
+    {
+      "name": "distinct",
+      "description": ""
+    },
+    {
+      "name": "format",
+      "description": ""
+    },
+    {
+      "name": "from",
+      "description": ""
+    },
+    {
+      "name": "group",
+      "description": ""
+    },
+    {
+      "name": "having",
+      "description": ""
+    },
+    {
+      "name": "into",
+      "description": ""
+    },
+    {
+      "name": "join",
+      "description": ""
+    },
+    {
+      "name": "left",
+      "description": ""
+    },
+    {
+      "name": "right",
+      "description": ""
+    },
+    {
+      "name": "inner",
+      "description": ""
+    },
+    {
+      "name": "outer",
+      "description": ""
+    },
+    {
+      "name": "outfile",
+      "description": ""
+    },
+    {
+      "name": "offset",
+      "description": ""
+    },
+    {
+      "name": "limit",
+      "description": ""
+    },
+    {
+      "name": "prewhere",
+      "description": ""
+    },
+    {
+      "name": "sample",
+      "description": ""
+    },
+    {
+      "name": "union",
+      "description": ""
+    },
+    {
+      "name": "where",
+      "description": ""
+    },
+    {
+      "name": "with",
+      "description": ""
+    },
+    {
+      "name": "is",
+      "description": ""
+    },
+    {
+      "name": "null",
+      "description": ""
+    },
+    {
+      "name": "not",
+      "description": ""
+    },
+    {
+      "name": "exists",
+      "description": ""
+    },
+    {
+      "name": "user",
+      "description": ""
+    },
+    {
+      "name": "watch",
+      "description": ""
+    },
+    {
+      "name": "sample",
+      "description": ""
+    }
+  ],
+  "Arithmetic": [
+    {
+      "name": "plus",
+      "title": "plus(a, b), a + b operator",
+      "description": "Calculates the sum of the numbers.You can also add integer numbers with a date or date and time. In the case of a date, adding an integer means adding the corresponding number of days. For a date with time, it means adding the corresponding number of seconds."
+    },
+    {
+      "name": "minus",
+      "title": "minus(a, b), a - b operator",
+      "description": "Calculates the difference. The result is always signed.You can also calculate integer numbers from a date or date with time. The idea is the same – see above for ‘plus’."
+    },
+    {
+      "name": "multiply",
+      "title": "multiply(a, b), a * b operator",
+      "description": "Calculates the product of the numbers."
+    },
+    {
+      "name": "divide",
+      "title": "divide(a, b), a / b operator",
+      "description": "Calculates the quotient of the numbers. The result type is always a floating-point type. It is not integer division. For integer division, use the ‘intDiv’ function.When dividing by zero you get ‘inf’, ‘-inf’, or ‘nan’."
+    },
+    {
+      "name": "intDiv",
+      "title": "intDiv(a, b)",
+      "description": "Calculates the quotient of the numbers. Divides into integers, rounding down (by the absolute value). An exception is thrown when dividing by zero or when dividing a minimal negative number by minus one."
+    },
+    {
+      "name": "intDivOrZero",
+      "title": "Differs from ‘intDiv’ in that it returns zero when dividing by zero or when dividing a minimal negative number by minus one.",
+      "description": ""
+    },
+    {
+      "name": "modulo",
+      "title": "modulo(a, b), a % b operator",
+      "description": "Calculates the remainder after division. If arguments are floating-point numbers, they are pre-converted to integers by dropping the decimal portion. The remainder is taken in the same sense as in C++. Truncated division is used for negative numbers. An exception is thrown when dividing by zero or when dividing a minimal negative number by minus one."
+    },
+    {
+      "name": "moduloOrZero",
+      "title": "moduloOrZero(a, b)",
+      "description": "Differs from modulo in that it returns zero when the divisor is zero."
+    },
+    {
+      "name": "negate",
+      "title": "negate(a), -a operator",
+      "description": "Calculates a number with the reverse sign. The result is always signed."
+    },
+    {
+      "name": "abs",
+      "title": "abs(a)",
+      "description": "Calculates the absolute value of the number (a). That is, if a < 0, it returns -a. For unsigned types it doesn’t do anything. For signed integer types, it returns an unsigned number."
+    },
+    {
+      "name": "gcd",
+      "title": "gcd(a, b)",
+      "description": "Returns the greatest common divisor of the numbers. An exception is thrown when dividing by zero or when dividing a minimal negative number by minus one."
+    },
+    {
+      "name": "lcm",
+      "title": "lcm(a, b)",
+      "description": "Returns the least common multiple of the numbers. An exception is thrown when dividing by zero or when dividing a minimal negative number by minus one."
+    }
+  ],
+  "Array": [
+    {
+      "name": "empty",
+      "title": "",
+      "description": "Returns 1 for an empty array, or 0 for a non-empty array. The result type is UInt8. The function also works for strings."
+    },
+    {
+      "name": "notEmpty",
+      "title": "",
+      "description": "Returns 0 for an empty array, or 1 for a non-empty array. The result type is UInt8. The function also works for strings."
+    },
+    {
+      "name": "length",
+      "title": "",
+      "description": "Returns the number of items in the array. The result type is UInt64. The function also works for strings."
+    },
+    {
+      "name": "emptyArrayUInt8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayUInt16",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayUInt32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayUInt64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayInt8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayInt16",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayInt32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayInt64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayFloat32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayFloat32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayDate",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayDateTime",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "emptyArrayToSingle",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "range",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "array",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayConcat",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "has",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "hasAll",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "hasAny",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "hasSubstr",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "indexOf",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayCount",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "countEqual",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayEnumerate",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayEnumerateUniq",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayPopBack",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayPopFront",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayPushBack",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayPushFront",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayResize",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arraySlice",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arraySort",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayReverseSort",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayUniq",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayJoin",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayDifference",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayDistinct",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayEnumerateDense",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayIntersect",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayReduce",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayReduceInRanges",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayReverse",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reverse",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayFlatten",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayCompact",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayZip",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayAUC",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayMap",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayFilter",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayFill",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayReverseFill",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arraySplit",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayReverseSplit",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayExists",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayAll",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayFirst",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayFirstIndex",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayMin",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayMax",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arraySum",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayAvg",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayCumSum",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayCumSumNonNegative",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayProduct",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayProduct",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Conversion": [
+    {
+      "name": "toInt8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt16",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt128",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt256",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt8OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt16OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt32OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt64OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt128OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt256OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt8OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt16OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt32OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt64OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt128OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInt256OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt16",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt128",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt256",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt16OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt32OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt64OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt128OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt256OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt16OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt32OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt64OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt128OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUInt256OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toFloat32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toFloat64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toFloat32OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toFloat64OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toFloat32OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toFloat64OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDate",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDateOrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDateOrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDateTime",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDateTimeOrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDateTimeOrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal128",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal256",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal32OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal64OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal128OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal256OrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal32OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal64OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal128OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toDecimal256OrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toFixedString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toStringCutToZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsUInt8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsUInt16",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsUInt32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsUInt64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsInt8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsInt16",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsInt32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsInt64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsFloat32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsFloat64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsDate",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsDateTime",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsFixedString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpretAsUUID",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "reinterpret",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "CAST",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "accurateCast",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "accurateCastOrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toInterval",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTimeBestEffort",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTime32BestEffort",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTimeBestEffortUS",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTimeBestEffortOrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTimeBestEffortOrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTimeBestEffortOrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTime32BestEffortOrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTimeBestEffortUSOrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTimeBestEffortUSOrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTime64BestEffort",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTime64BestEffortOrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "parseDateTime64BestEffortOrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toLowCardinality",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUnixTimestamp64Milli",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUnixTimestamp64Micro",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUnixTimestamp64Nano",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "fromUnixTimestamp64Milli",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "fromUnixTimestamp64Micro",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "fromUnixTimestamp64Nano",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "formatRow",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "formatRowNoNewline",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Replace in Strings": [
+    {
+      "name": "replaceOne",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "replaceAll",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "replace",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "replaceRegexpOne",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "replaceRegexpAll",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "regexpQuoteMeta",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Files": [
+    {
+      "name": "file",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Mathematical": [
+    {
+      "name": "e",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "exp",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "log",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ln",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "exp2",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "log2",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "exp10",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "log10",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sqrt",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cbrt",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "erf",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "erfc",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "lgamma",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "tgamma",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sin",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cos",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "tan",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "asin",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "acos",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "atan",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "pow",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "power",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "intExp2",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "intExp10",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cosh",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "acosh",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sinh",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "asinh",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "atanh",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "atan2",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "hypot",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "log1p",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sign",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Rounding": [
+    {
+      "name": "floor",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ceil",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ceiling",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "trunc",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "truncate",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "round",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "roundBankers",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "roundToExp2",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "roundDuration",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "roundAge",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "roundDown",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Working with maps": [
+    {
+      "name": "map",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "mapAdd",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "mapSubtract",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "mapPopulateSeries",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "mapContains",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "mapKeys",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "mapValues",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Splitting and Merging Strings and Arrays": [
+    {
+      "name": "splitByChar",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "splitByString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "arrayStringConcat",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "alphaTokens",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "extractAllGroups",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Bit": [
+    {
+      "name": "bitAnd",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitOr",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitXor",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitNot",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitShiftLeft",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitShiftRight",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitRotateLeft",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitRotateRight",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitTest",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitTestAll",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitTestAny",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitCount",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitHammingDistance",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Bitmap": [
+    {
+      "name": "bitmapBuild",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapToArray",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapSubsetInRange",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapSubsetLimit",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapContains",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapHasAny",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapHasAll",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapCardinality",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapMin",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapMax",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapTransform",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapAnd",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapOr",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapXor",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapAndnot",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapAndCardinality",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapOrCardinality",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmapAndnotCardinality",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Hash": [
+    {
+      "name": "halfMD5",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "MD5",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sipHash64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sipHash128",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cityHash64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "intHash32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "intHash64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "SHA1",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "SHA224",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "SHA256",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "URLHash",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "farmFingerprint64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "farmHash64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "javaHash",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "javaHashUTF16LE",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "hiveHash",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "metroHash64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "jumpConsistentHash",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "murmurHash2_32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "murmurHash2_64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "gccMurmurHash",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "murmurHash3_32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "murmurHash3_64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "murmurHash3_128",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "xxHash32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "xxHash64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ngramSimHash",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ngramSimHashCaseInsensitive",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ngramSimHashUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ngramSimHashCaseInsensitiveUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleSimHash",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleSimHashCaseInsensitive",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleSimHashUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleSimHashCaseInsensitiveUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ngramMinHashUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ngramMinHashCaseInsensitiveUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ngramMinHashArg",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ngramMinHashArgCaseInsensitive",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ngramMinHashArgUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ngramMinHashArgCaseInsensitiveUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleMinHash",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleMinHashCaseInsensitive",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleMinHashUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleMinHashCaseInsensitiveUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleMinHashArg",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleMinHashArgCaseInsensitive",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleMinHashArgUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "wordShingleMinHashArgCaseInsensitiveUTF8",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Random Numbers And Strings": [
+    {
+      "name": "rand",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "rand32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "rand64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "randConstant",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "randomString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "randomFixedString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "randomPrintableASCII",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "randomStringUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "fuzzBits",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Encoding": [
+    {
+      "name": "char",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "hex",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "unhex",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "UUIDStringToNum",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "UUIDNumToString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmaskToList",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bitmaskToArray",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "UUID": [
+    {
+      "name": "generateUUIDv4",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUUID",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUUIDOrNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toUUIDOrZero",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "UUIDStringToNum",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "UUIDNumToString",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "URLs": [
+    {
+      "name": "protocol",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "domain",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "domainWithoutWWW",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "topLevelDomain",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "firstSignificantSubdomain",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cutToFirstSignificantSubdomain",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cutToFirstSignificantSubdomainWithWWW",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cutToFirstSignificantSubdomainCustom",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cutToFirstSignificantSubdomainCustomWithWWW",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "firstSignificantSubdomainCustom",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "port",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "path",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "pathFull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "queryString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "fragment",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "queryStringAndFragment",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "extractURLParameter",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "extractURLParameters",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "extractURLParameterNames",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "URLHierarchy",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "URLPathHierarchy",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "decodeURLComponent",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "netloc",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cutWWW",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cutQueryString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cutFragment",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cutQueryStringAndFragment",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cutURLParameter",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "IP Addresses": [
+    {
+      "name": "IPv4NumToString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "IPv4StringToNum",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "IPv4NumToStringClassC",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "IPv6NumToString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "IPv6StringToNum",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "IPv4ToIPv6",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "cutIPv6",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "IPv4CIDRToRange",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "IPv6CIDRToRange",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toIPv4",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toIPv6",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "isIPv4String",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "isIPv6String",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "isIPAddressInRange",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "JSON": [
+    {
+      "name": "visitParamHas",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "visitParamExtractUInt",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "visitParamExtractInt",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "visitParamExtractFloat",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "visitParamExtractBool",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "visitParamExtractRaw",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "visitParamExtractRaw",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "isValidJSON",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONHas",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONLength",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONType",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONExtractInt",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONExtractFloat",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONExtractBool",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONExtractString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONExtract",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONExtractKeysAndValues",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONExtractRaw",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONExtractArrayRaw",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "JSONExtractKeysAndValuesRaw",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "External Dictionaries": [
+    {
+      "name": "dictGet",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictHas",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetHierarchy",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictIsIn",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetInt8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetInt16",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetInt32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetInt64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetUInt8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetUInt16",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetUInt32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetUInt64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetFloat32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetFloat64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetDate",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetDateTime",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetUUID",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dictGetString",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Geographical Coordinates": [
+    {
+      "name": "greatCircleDistance",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "greatCircleAngle",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "pointInEllipses",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "pointInPolygon",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "GeoHash": [
+    {
+      "name": "geohashEncode",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "geohashDecode",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "geohashesInBox",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "H3 Indexes": [
+    {
+      "name": "h3IsValid",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3GetResolution",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3EdgeAngle",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3EdgeLengthM",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "geoToH3",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3kRing",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3GetBaseCell",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3HexAreaM2",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3IndexesAreNeighbors",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3ToChildren",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3ToParent",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3ToString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "stringToH3",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "h3GetResolution",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Nullable": [
+    {
+      "name": "isNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "isNotNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "coalesce",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ifNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "nullIf",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "assumeNotNull",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toNullable",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Machine Learning": [
+    {
+      "name": "stochasticLinearRegression",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "stochasticLogisticRegression",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bayesAB",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "evalMLMethod",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Introspection": [
+    {
+      "name": "addressToLine",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "addressToSymbol",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "demangle",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "tid",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "logTrace",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Tuples": [
+    {
+      "name": "tuple",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "tupleElement",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "untuple",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "tupleHammingDistance",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Encryption": [
+    {
+      "name": "encrypt",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "aes_encrypt_mysql",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "decrypt",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "aes_decrypt_mysql",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Other": [
+    {
+      "name": "hostName",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "getMacro",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "FQDN",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "basename",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "visibleWidth",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toTypeName",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "blockSize",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "byteSize",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "materialize",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ignore",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sleep",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sleepEachRow",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "currentDatabase",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "currentUser",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "isConstant",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "isFinite",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "isInfinite",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "ifNotFinite",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "isNaN",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "hasColumnInTable",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "bar",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "transform",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "transform",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "formatReadableSize",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "formatReadableQuantity",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "formatReadableTimeDelta",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "least",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "greatest",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "uptime",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "version",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "blockNumber",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "rowNumberInBlock",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "rowNumberInAllBlocks",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "neighbor",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "runningDifference",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "runningDifferenceStartingWithFirstValue",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "runningConcurrency",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "MACNumToString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "MACStringToNum",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "MACStringToOUI",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "getSizeOfEnumType",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "blockSerializedSize",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toColumnTypeName",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "dumpColumnStructure",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "defaultValueOfArgumentType",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "defaultValueOfTypeName",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "indexHint",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "replicate",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "filesystemAvailable",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "filesystemFree",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "filesystemCapacity",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "finalizeAggregation",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "runningAccumulate",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "joinGet",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "modelEvaluate",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "throwIf",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "identity",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "randomPrintableASCII",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "randomString",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "randomStringUTF8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "getSetting",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "isDecimalOverflow",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "countDigits",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "errorCodeToName",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "tcpPort",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Aggregate": [
+    {
+      "name": "count",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "min",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "max",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sum",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "avg",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "any",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "stddevPop",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "stddevSamp",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "varPop",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "varSamp",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "covarPop",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "covarSamp",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "anyHeavy",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "anyLast",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "argMin",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "argMax",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "avgWeighted",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "corr",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "topK",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "topKWeighted",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupArray",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupUniqArray",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupArrayInsertAt",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupArrayMovingSum",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupArrayMovingAvg",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupArraySample",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupBitAnd",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupBitOr",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupBitXor",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupBitmap",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupBitmapAnd",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupBitmapOr",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "groupBitmapXor",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sumWithOverflow",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "deltaSum",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "deltaSumTimestamp",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "sumMap",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "minMap",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "maxMap",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "initializeAggregation",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "skewPop",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "skewSamp",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "kurtPop",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "kurtSamp",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "uniq",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "uniqExact",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "uniqCombined",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "uniqCombined64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "uniqHLL12",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "uniqTheta",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "quantile",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "quantiles",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "quantileExact",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "quantileExactWeighted",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "quantileTiming",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "quantileTimingWeighted",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "quantileDeterministic",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "quantileTDigest",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "quantileTDigestWeighted",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "simpleLinearRegression",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "stochasticLinearRegression",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "stochasticLogisticRegression",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "categoricalInformationValue",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "studentTTest",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "welchTTest",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "mannWhitneyUTest",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "median",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "rankCorr",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "Data Types": [
+    {
+      "name": "UInt8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Int16",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Int32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Int64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Int128",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Int256",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "UInt8",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "UInt16",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "UInt32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "UInt64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "UInt256",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Float32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Float64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Decimal32",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Decimal64",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Decimal128",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "Decimal256",
+      "title": "",
+      "description": ""
+    }
+  ]
+}

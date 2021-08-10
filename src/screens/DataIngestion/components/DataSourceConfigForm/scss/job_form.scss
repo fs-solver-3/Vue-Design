@@ -1,0 +1,26 @@
+$title-width: 140px;
+$input-width: 350px;
+
+.job-form-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $title-width + $input-width;
+  //class="item d-flex w-100 justify-content-center align-items-center"
+
+  .title {
+    width: $title-width;
+  }
+  .input {
+    width: $input-width;
+    input {
+      padding-left: 16px;
+    }
+  }
+  .text-connection {
+    color: var(--accent);
+  }
+}
+.job-form-item + .job-form-item {
+  margin-top: 8px;
+}

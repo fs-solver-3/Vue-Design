@@ -1,0 +1,24 @@
+// custom color for dark table
+$table-color: $primaryTextColor !default;
+$table-border-width: 0.5px !default;
+$table-dark-hover-bg: $primaryColor !default;
+$table-border-color: $primaryColor !default;
+$table-dark-active-bg: $primaryColor !default;
+$table-dark-border-color: $primaryColor !default;
+$table-active-bg: $primaryColor !default;
+// custom input
+$input-color: $primaryTextColor;
+$input-border-color: $widgetColor;
+$input-bg: $widgetColor;
+$input-box-shadow: 0;
+$input-border-width: 0;
+$input-padding-x: 8;
+// custom select
+$custom-select-color: $primaryTextColor;
+$custom-select-bg: $primaryColor;
+$custom-select-background: $primaryColor;
+$custom-select-font-family: $frontFamily;
+$custom-select-font-size: 14px;
+$custom-select-focus-border-color: $widgetColor;
+$custom-select-focus-box-shadow: none;
+$custom-select-border-color: $widgetColor;

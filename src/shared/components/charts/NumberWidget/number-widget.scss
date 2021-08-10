@@ -1,0 +1,76 @@
+/*!
+ * @author: tvc12 - Thien Vi
+ * @created: 1/19/21, 5:51 PM
+ */
+
+@import '~@/themes/scss/mixin.scss';
+
+.number-widget-container {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 24px 8px;
+  width: 100%;
+}
+
+.number-widget-title {
+  @include regular-text;
+  align-self: center;
+  font-size: var(--title-text-size);
+  font-weight: 300;
+  letter-spacing: 0.86px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.number-widget-sub-title {
+  @include regular-text;
+  align-self: center;
+  font-size: var(--sub-title-text-size);
+  letter-spacing: 0.2px;
+  margin-top: var(--margin-subtitle);
+  opacity: 0.8;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.number-widget-number {
+  @include regular-text();
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: var(--margin-number);
+}
+
+.number-tooltip {
+  > .arrow {
+    display: none;
+  }
+
+  > .tooltip-inner {
+    background: unset;
+
+    > div {
+      padding: 4px 8px;
+    }
+  }
+}
+
+.number-widget-compare {
+  @include bold-text;
+  align-self: center;
+  background-color: rgba(#ffffff, 0.3);
+  border-radius: 6px;
+  height: 30px;
+  margin-top: var(--margin-comparison);
+  padding: 0 6px;
+  text-align: center;
+}
+
+.number-widget-compare-content {
+  //margin-top: 5px;
+}

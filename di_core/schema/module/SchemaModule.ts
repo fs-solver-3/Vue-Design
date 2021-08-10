@@ -1,0 +1,27 @@
+/*
+ * @author: tvc12 - Thien Vi
+ * @created: 3/30/21, 10:30 AM
+ */
+
+import { BaseModule } from '@core/modules';
+import { Container, Scope } from 'typescript-ioc';
+import { SchemaService, SchemaServiceImpl } from '@core/schema/service/SchemaService';
+import { SchemaRepositoryImpl, SchemaRepository } from '@core/schema/repository/SchemaRepository';
+
+export class SchemaModule extends BaseModule {
+  configuration(): void {
+    Container.bind(SchemaRepository)
+      .to(SchemaRepositoryImpl)
+      .scope(Scope.Singleton);
+    Container.bind(SchemaService)
+      .to(SchemaServiceImpl)
+      .scope(Scope.Singleton);
+  }
+}
+
+export class MockSchemaModule extends BaseModule {
+  configuration(): void {
+    // Container.bind(SchemaRepository).to(HttpSchemaRepository).scope(Scope.Singleton);
+    // Container.bind(SchemaService).to(SchemaServiceImpl).scope(Scope.Singleton);
+  }
+}

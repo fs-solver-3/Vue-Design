@@ -1,0 +1,126 @@
+@import '~@/themes/scss/di-variables.scss';
+@import '~@/themes/scss/datepicker.scss';
+
+.dashboard-area {
+  height: 100%;
+
+  @mixin dashboard-panel {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    height: calc(100vh - 158px);
+
+    @media screen and (max-width: 630px) {
+      height: calc(100vh - 180px);
+    }
+    @media screen and (max-width: 526px) {
+      height: calc(100vh - 220px);
+    }
+
+    @media screen and (max-width: 406px) {
+      height: calc(100vh - 250px);
+    }
+  }
+
+  .dashboard-status {
+    margin-bottom: 40px;
+
+    .empty-dashboard {
+      @include dashboard-panel();
+    }
+
+    .error-panel {
+      @include dashboard-panel();
+    }
+
+    .status-loading {
+      @include dashboard-panel();
+    }
+
+    > div[class='container-*'] {
+      min-height: calc(100vh - 158px);
+      margin-bottom: 64px;
+    }
+  }
+
+  .header-sticky {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 24px;
+    padding-bottom: 16px;
+    position: sticky;
+  }
+}
+
+.full-height {
+  height: max-content !important;
+}
+
+.bar-fixed {
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.16);
+}
+
+.full-screen-mode.dashboard-area,
+.tv-mode.dashboard-area {
+  > header,
+  > div {
+    padding-left: 5px;
+    padding-right: 5px;
+
+    .empty-dashboard,
+    .error-panel,
+    .status-loading {
+      height: calc(100vh - 118px);
+    }
+
+    > div[class='container-*'] {
+      margin-bottom: 104px;
+    }
+  }
+}
+
+.tv-mode.dashboard-area {
+  .header-sticky {
+    padding: 8px;
+    margin-bottom: -8px;
+    //padding-top: 8px;
+    //padding-bottom: 8px;
+    $animation-speed: 200ms;
+
+    max-height: 54px;
+    overflow: hidden;
+    transition: max-height linear #{$animation-speed + 100ms};
+    .dashboard--filters {
+      display: none !important;
+    }
+    * {
+      visibility: hidden;
+      transition: visibility linear $animation-speed;
+    }
+    .dashboard-title {
+      visibility: visible;
+      margin-left: -16px !important;
+      transition: margin-left linear $animation-speed;
+    }
+    //
+    &:hover {
+      max-height: 500px;
+      * {
+        visibility: visible;
+      }
+      .dashboard-title {
+        margin-left: 16px !important;
+      }
+    }
+  }
+}
+
+.normal-mode.dashboard-area {
+  > header,
+  > div {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}

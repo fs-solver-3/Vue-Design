@@ -1,0 +1,64 @@
+.v-context {
+  &,
+  & ul {
+    background-color: var(--primary);
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.16);
+    display: block;
+    margin: 0;
+    padding: 0px;
+    min-width: 82px;
+    z-index: 1500;
+    position: fixed;
+    list-style: none;
+    box-sizing: border-box;
+    max-height: calc(100% - 50px);
+    overflow-y: auto;
+
+    > li {
+      margin: 0;
+      position: relative;
+
+      > a {
+        display: block;
+        padding: 8px;
+        // padding: .5rem 1.5rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: rgb(255, 255, 255);
+          background-color: var(--secondary);
+        }
+
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &__sub {
+    > a:after {
+      content: '\203A';
+      float: right;
+      padding-left: 1rem;
+    }
+
+    > ul {
+      display: none;
+    }
+  }
+}

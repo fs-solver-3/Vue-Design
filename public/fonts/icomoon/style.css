@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('icomoon.eot?8lx52g');
+  src: url('icomoon.eot?8lx52g#iefix') format('embedded-opentype'), url('icomoon.ttf?8lx52g') format('truetype'), url('icomoon.woff?8lx52g') format('woff'),
+    url('icomoon.svg?8lx52g#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='di-icon-'],
+[class*=' di-icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  transform: translateY(1px);
+  -moz-transform: translateY(1px);
+  -webkit-transform: translateY(1px);
+}
+
+.di-icon-database:before {
+  content: '\e901';
+}
+.di-icon-query-editor:before {
+  content: '\e902';
+}
+.di-icon-relationship:before {
+  content: '\e903';
+}
+.di-icon-schema:before {
+  content: '\e904';
+}

@@ -1,0 +1,61 @@
+/*!
+ * @author: tvc12 - Thien Vi
+ * @created: 7/12/21, 5:09 PM
+ */
+
+@import '~@/themes/scss/mixin';
+
+.tab-selection {
+  @include item();
+  background: transparent;
+  display: flex;
+
+  ::v-deep {
+    .tab-item-mini {
+      width: 100%;
+    }
+
+    .choice-item {
+      width: 100%;
+    }
+  }
+}
+
+.vertical {
+  margin-bottom: 4px;
+
+  &.choice {
+    margin-bottom: 12px;
+  }
+}
+
+.horizontal {
+  margin-right: 4px;
+
+  &.choice {
+    margin-right: 16px;
+  }
+}
+
+.tab-selection-fit-content {
+  @include item();
+  background: transparent;
+  display: flex;
+  width: 100%;
+}
+
+.dropdown-item {
+  background: transparent;
+  margin-top: 0;
+  padding: 0;
+
+  ::v-deep {
+    .relative > span > button {
+      background: var(--charcoal);
+    }
+  }
+
+  :hover {
+    background: transparent;
+  }
+}

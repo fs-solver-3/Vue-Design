@@ -1,0 +1,128 @@
+$primary-color: #272a36;
+$secondary-color: #333645;
+$card-color: #2d303c;
+$white-color: #fff;
+$muted-color: rgba(255, 255, 255, 0.6);
+$muted-border-color: rgba(255, 255, 255, 0.1);
+$header-color: #4a506a;
+$body-color-odd: #2b2e3a;
+$body-color-even: #2f3240;
+$card-spacing: 16px;
+
+.db-relationship-line {
+  transform: translate(var(--ll-translate-x), var(--ll-translate-y));
+  z-index: 1;
+}
+.table-item-container {
+  margin: 0 40px 60px 40px;
+  display: flex;
+  flex-direction: column;
+
+  &.highlight .table-item {
+    overflow: hidden;
+    border-color: #597fff;
+    animation: flash_border linear infinite 1000ms;
+
+    @keyframes flash_border {
+      0% {
+        border-color: #597fff;
+      }
+      25% {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #597fff;
+      }
+      75% {
+        border-color: transparent;
+      }
+    }
+  }
+
+  .database-name {
+    margin-bottom: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .table-item {
+    $spacing: 8px 10px;
+    $child-size: 100%;
+    font-size: 12px;
+    display: inline-block;
+    width: auto;
+    border-radius: 4px;
+    overflow: hidden;
+    min-width: 170px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+    color: $white-color;
+    background-color: #272a36;
+    border: 1px solid transparent;
+
+    position: relative;
+
+    .table-name {
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 8px 10px;
+      font-weight: 500;
+      justify-content: space-between;
+      cursor: move;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .table-columns {
+      display: flex;
+      flex-direction: column;
+      //background-color: $body-color-even;
+
+      .table-columns-item {
+        //color: $muted-color;
+        padding: $spacing;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0.5px 1px 0 rgb(255 255 255 / 10%);
+
+        .table-columns-icon {
+          margin-right: 8px;
+          width: 16px;
+          height: 16px;
+        }
+
+        &:hover,
+        &.active {
+          color: #597fff;
+          background-color: $body-color-odd !important;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      background-color: #272a36;
+      border-radius: 4px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.16);
+      font-size: $child-size;
+      padding: 4px 0;
+
+      max-height: 300px;
+      overflow: auto;
+      min-width: 100px;
+
+      .dropdown-item {
+        font-size: 85%;
+        padding: $spacing;
+        color: $white-color;
+
+        &:focus,
+        &:hover {
+          background-color: #333646;
+        }
+      }
+    }
+  }
+}

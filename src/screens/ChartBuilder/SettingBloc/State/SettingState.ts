@@ -1,0 +1,10 @@
+/*
+ * @author: tvc12 - Thien Vi
+ * @created: 6/15/21, 11:12 AM
+ */
+
+export abstract class SettingState {
+  toString() {
+    return this;
+  }
+}

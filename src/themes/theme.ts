@@ -1,0 +1,122 @@
+export interface DataInsiderTheme {
+  gridLineColor: string;
+  heatmapMin: string;
+  backdrop: string;
+  yellow: string;
+  neutral: string;
+  danger: string;
+  textColor: string;
+  accent: string;
+  transparent: string;
+  lightGold: string;
+  secondary: string;
+  textColorButton: string;
+  white: string;
+  blueGrey: string;
+  success: string;
+  tableBorderColor: string;
+  dark: string;
+  purple: string;
+  warning: string;
+  heatmapMax: string;
+  primary: string;
+  // For component use alpha for enable or disable
+  disableAlpha: number;
+  enableAlpha: number;
+  disableOpacity: number;
+  enableOpacity: number;
+
+  charcoal: string;
+  charcoal2: string;
+  userProfileTableBackgroundColor: string;
+  userProfileBackgroundColor: string;
+  numberDecreaseColor: string;
+  numberIncreaseColor: string;
+  copper: string;
+  slate: string;
+  //TODO: Mirgrate to setting
+  thBackgroundColor: string;
+  tdOddBackgroundColor: string;
+  normalOpacity: number;
+  activeOpacity: number;
+}
+
+export const DarkTheme: DataInsiderTheme = {
+  primary: '#272a36',
+  secondary: '#333645',
+  transparent: '#00000000',
+  neutral: '#9799ac',
+  white: '#fff',
+  dark: '#272a36',
+  textColor: '#fff',
+  blueGrey: '#9799ad',
+  textColorButton: '#FFFFFF80',
+  accent: '#597fff',
+  purple: '#c797ff',
+  yellow: '#ffe659',
+  success: '#4eff86',
+  warning: '#ffc107',
+  danger: '#ff5959',
+  backdrop: '#131317',
+  lightGold: '#ffe659',
+  heatmapMin: '#e8e8f5',
+  heatmapMax: '#8a8ae2',
+  gridLineColor: '#FFFFFF19',
+  tableBorderColor: '#505362',
+  disableAlpha: 0.3,
+  enableAlpha: 1,
+  disableOpacity: 0.2,
+  enableOpacity: 1,
+  charcoal: '#3a3d4d',
+  charcoal2: '#2d303c',
+  userProfileTableBackgroundColor: '#2d303c',
+  userProfileBackgroundColor: '#2d303c',
+  numberDecreaseColor: '#f7517f',
+  numberIncreaseColor: '#16ceb9',
+  copper: '#cc4426',
+  slate: '#4a506a',
+  thBackgroundColor: '#4a506a',
+  tdOddBackgroundColor: '#2f3240',
+  normalOpacity: 0.5,
+  activeOpacity: 1.0
+};
+
+export const LightTheme: DataInsiderTheme = {
+  primary: '#fafafa',
+  secondary: '#2b2b2b',
+  transparent: '#00000000',
+  neutral: '#9799ac',
+  white: '#fff',
+  dark: '#2b2b2b',
+  textColor: '#2b2b2b',
+  blueGrey: '#9799ad',
+  textColorButton: '#FFFFFF80',
+  accent: '#597fff',
+  purple: '#c797ff',
+  yellow: '#ffe659',
+  success: '#4eff86',
+  warning: '#ffc107',
+  danger: '#ff5959',
+  backdrop: '#131317',
+  lightGold: '#ffe659',
+  heatmapMin: '#ffffff',
+  heatmapMax: '#c4463a',
+  gridLineColor: '#FFFFFF19',
+  tableBorderColor: '#505362',
+  disableAlpha: 0.3,
+  enableAlpha: 1,
+  disableOpacity: 0.2,
+  enableOpacity: 1,
+  charcoal: '#3a3d4d',
+  charcoal2: '#2d303c',
+  userProfileTableBackgroundColor: '#2d303c',
+  userProfileBackgroundColor: '#2d303c',
+  numberDecreaseColor: '#f7517f',
+  numberIncreaseColor: '#16ceb9',
+  copper: '#cc4426',
+  slate: '#4a506a',
+  thBackgroundColor: '#4a506a',
+  tdOddBackgroundColor: '#2f3240',
+  normalOpacity: 0.5,
+  activeOpacity: 1.0
+};

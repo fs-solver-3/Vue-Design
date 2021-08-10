@@ -1,0 +1,95 @@
+/*!
+ * @author: tvc12 - Thien Vi
+ * @created: 7/2/21, 9:02 PM
+ */
+
+.ant-popover {
+  --primary: var(--popover-background-color, rgba(#212638, 0.95));
+  --secondary: rgba(0, 0, 0, 0.2);
+  --vc-reset: rgba(0, 0, 0, 0.2);
+}
+
+.root-dashboard-popover-theme {
+  .filter-popover-area {
+    --primary: var(--popover-background-color, rgba(#212638, 0.95));
+    --secondary: rgba(0, 0, 0, 0.2);
+    --vc-reset: rgba(0, 0, 0, 0.2);
+    border: none;
+
+    .select-container > .relative > span > button {
+      background: var(--secondary);
+    }
+
+    .select-popover {
+      ul li {
+        &:hover {
+          background: rgba(0, 0, 0, 0.2);
+        }
+
+        &.active.selected {
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+
+  .di-context-menu-container,
+  .modal,
+  .popover-body {
+    --primary: var(--popover-background-color, rgba(#212638, 0.95));
+    --secondary: rgba(0, 0, 0, 0.2);
+  }
+
+  .di-context-menu-container ul {
+    box-shadow: none;
+  }
+
+  .select-popover {
+    ul li {
+      &:hover {
+        background: rgba(0, 0, 0, 0.2) !important;
+      }
+
+      &.active.selected {
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .modal {
+    .modal-footer {
+      border: none !important;
+
+      .select-popover {
+        ul li {
+          &:hover {
+            background: rgba(0, 0, 0, 0.2);
+          }
+
+          &.active.selected {
+            background: rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+
+    .select-container > .relative > span > button {
+      background: var(--secondary);
+    }
+
+    .modal-body {
+      //.select-popover {
+      //
+      //  ul li {
+      //    &:hover {
+      //      background: rgba(0, 0, 0, 0.2);
+      //    }
+      //
+      //    &.active.selected {
+      //      background: rgba(0, 0, 0, 0.1);
+      //    }
+      //  }
+      //}
+    }
+  }
+}

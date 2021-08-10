@@ -1,0 +1,38 @@
+@import '~gridstack/dist/gridstack.css';
+
+.grid-stack > .grid-stack-item {
+  $grid-columns: 24;
+  min-width: (100% / $grid-columns);
+
+  @for $i from 1 through $grid-columns {
+    &[data-gs-width='#{$i}'] {
+      width: (100% / $grid-columns) * $i;
+    }
+    &[data-gs-x='#{$i}'] {
+      left: (100% / $grid-columns) * $i;
+    }
+    &[data-gs-min-width='#{$i}'] {
+      min-width: (100% / $grid-columns) * $i;
+    }
+    &[data-gs-max-width='#{$i}'] {
+      max-width: (100% / $grid-columns) * $i;
+    }
+  }
+}
+
+// hide icon
+.ui-resizable-se,
+.ui-resizable-sw {
+  opacity: 0 !important;
+}
+
+.ui-resizable-se {
+  bottom: -5px !important;
+  right: -5px !important;
+}
+
+.grid-stack-item-content {
+  border-radius: 4px;
+  //background-color: var(--secondary);
+  overflow: visible !important;
+}

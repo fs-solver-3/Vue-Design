@@ -1,0 +1,168 @@
+/*!
+ * @author: tvc12 - Thien Vi
+ * @created: 7/2/21, 4:41 PM
+ */
+
+.root-dashboard-theme {
+  $min-background-color: var(--min-background-color, #3b425c);
+  $max-background-color: var(--max-background-color, #212638);
+  $base-background-color: var(--popover-background-color, rgba(#212638, 0.95));
+  $base-color: #000;
+  $base-text-color: #fff;
+  $background-gradient: linear-gradient(131deg, $min-background-color 2%, $max-background-color 90%);
+
+  .dashboard-theme:before {
+    content: '';
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .dashboard-theme:before,
+  .dashboard-theme .header-sticky {
+    background-size: 100vw 100vh;
+
+    background-image: $background-gradient;
+  }
+
+  .dashboard-theme {
+    .dashboard-area {
+      z-index: 1;
+      position: relative;
+    }
+
+    .control-bar {
+      .di-button img {
+        opacity: var(--normal-opacity);
+      }
+
+      .di-button:hover,
+      .di-button:active {
+        background-color: unset !important;
+
+        img {
+          opacity: var(--active-opacity);
+        }
+      }
+    }
+
+    .widget-action,
+    .empty-dashboard {
+      --accent: #fff;
+    }
+
+    .header-container {
+      background: rgba($base-color, 0.2);
+      z-index: 1;
+    }
+
+    .view-panel {
+      background-color: rgba($base-color, 0.1) !important;
+      --accent: #fff;
+
+      svg,
+      .chip-title {
+        color: $base-color;
+      }
+    }
+  }
+
+  .db-listing-searchable {
+    --primary: var(--popover-background-color, rgba(#212638, 0.95));
+    --accent: #fff;
+    --secondary: rgba(0, 0, 0, 0.2);
+    border: none;
+
+    .field-listing-area,
+    .select-default-time {
+      .btn-ghost-alter:hover,
+      .btn-ghost-alter:active,
+      .btn-ghost:hover,
+      .btn-ghost:active {
+        background-color: var(--secondary) !important;
+      }
+    }
+
+    input {
+      background-color: transparent;
+
+      &::placeholder {
+        color: rgba($base-text-color, 0.6);
+      }
+    }
+
+    .footer-filter-menu {
+      > .filter-control {
+        justify-content: space-between;
+        padding: 0;
+
+        p.label {
+          opacity: initial;
+        }
+
+        [class*='col-'] {
+          flex: unset;
+          max-width: unset;
+          width: unset;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .none-action-container,
+  .drilldown-popover,
+  .zoom-popover,
+  div.v-context .context-drilldown {
+    --primary: var(--popover-background-color, rgba(#212638, 0.95));
+    --accent: #fff;
+    --secondary: rgba(0, 0, 0, 0.2);
+    border: none;
+    box-shadow: none;
+
+    input {
+      background-color: transparent;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+
+    .popover-body .regular-icon-16 {
+      padding: 0;
+    }
+
+    .btn-ghost-alter:hover,
+    .btn-ghost-alter:active,
+    .btn-ghost:hover,
+    .btn-ghost:active {
+      background-color: var(--secondary) !important;
+    }
+  }
+
+  .drilldown-popover,
+  .zoom-popover {
+    .custom-popover {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  div.v-context.widget-context-menu,
+  div.v-context.dashboard-context-menu,
+  div.v-context.zoom-context-menu {
+    --primary: var(--popover-background-color, rgba(#212638, 0.95));
+    --secondary: rgba(0, 0, 0, 0.2);
+
+    .btn-ghost-alter:hover,
+    .btn-ghost-alter:active,
+    .btn-ghost:hover,
+    .btn-ghost:active {
+      background-color: var(--secondary) !important;
+    }
+    //background: var(--primary);
+  }
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <path d="M0 0H48V48H0z" transform="translate(-1023 -563) translate(372 106) translate(0 109) translate(616 324) translate(35 24)"/>
+                            <path fill="#57F" d="M48 10v8H0v-8h48zm0-10v9H0V0h48z" transform="translate(-1023 -563) translate(372 106) translate(0 109) translate(616 324) translate(35 24)"/>
+                            <path fill="#93A8FF" d="M22.952 12v4H2v-4h20.952zM46 12v4H25.048v-4H46zm0-10v5H2V2h44z" transform="translate(-1023 -563) translate(372 106) translate(0 109) translate(616 324) translate(35 24)"/>
+                            <path fill="#9799AE" d="M12 44v4H0v-4h12zm12 0v4H12.75v-4H24zm12 0v4H24.75v-4H36zm12 0v4H36.75v-4H48zm-36-5v4H0v-4h12zm12 0v4H12.75v-4H24zm12 0v4H24.75v-4H36zm12 0v4H36.75v-4H48zm-36-5v4H0v-4h12zm12 0v4H12.75v-4H24zm12 0v4H24.75v-4H36zm12 0v4H36.75v-4H48zm-36-5v4H0v-4h12zm12 0v4H12.75v-4H24zm12 0v4H24.75v-4H36zm12 0v4H36.75v-4H48zm0-5v4H36.75v-4H48zm-36-5v4H0v-4h12zm12 0v4H12.75v-4H24zm12 0v4H24.75v-4H36zm12 0v4H36.75v-4H48zM0 24H12V28H0zM12.75 24H24V28H12.75zM24.75 24H36V28H24.75z" transform="translate(-1023 -563) translate(372 106) translate(0 109) translate(616 324) translate(35 24)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

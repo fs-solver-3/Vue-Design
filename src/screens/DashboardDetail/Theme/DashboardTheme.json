@@ -1,0 +1,37 @@
+{
+  "default": {
+    "style": {
+      "--min-background-color": "#3b425c",
+      "--max-background-color": "#212638"
+    },
+    "colors": ["#28ABAA", "#4DCF36", "#EA6B6B", "#75ABEA", "#2CC5DC", "#FF7AAF", "#C247C2", "#2CA10F", "#E38007", "#FFD422"]
+  },
+  "theme1": {
+    "style": {
+      "--min-background-color": "#4e63ab",
+      "--max-background-color": "#243265"
+    },
+    "colors": ["#45C7C6", "#88F874", "#F78686", "#96BEED", "#ABEEEE", "#FF6FA9", "#FF87FF", "#4BD828", "#FF9D24", "#FFF022"]
+  },
+  "theme2": {
+    "style": {
+      "--min-background-color": "#4e8aab",
+      "--max-background-color": "#244d65"
+    },
+    "colors": ["#45C7C6", "#88F874", "#F78686", "#96BEED", "#ABEEEE", "#FF6FA9", "#FF87FF", "#4BD828", "#FF9D24", "#FFF022"]
+  },
+  "theme3": {
+    "style": {
+      "--min-background-color": "#634eab",
+      "--max-background-color": "#243365"
+    },
+    "colors": ["#06C2EB", "#88F874", "#F78686", "#96BEED", "#ABEEEE", "#FF6FA9", "#FF87FF", "#4BD828", "#FF9D24", "#FFF022"]
+  },
+  "theme4": {
+    "style": {
+      "--min-background-color": "#c0474f",
+      "--max-background-color": "#751a1b"
+    },
+    "colors": ["#06C2EB", "#88F874", "#FFAEAE", "#96BEED", "#C6FBFB", "#FF00ED", "#FF87FF", "#4BD828", "#FF9D24", "#FFF022"]
+  }
+}

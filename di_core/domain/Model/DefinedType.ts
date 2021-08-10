@@ -1,0 +1,11 @@
+export type DashboardId = number;
+export type DirectoryId = number;
+export type WidgetId = number;
+export type Id = number;
+export type UserId = number;
+export type DDate = number;
+export type DIMap<T> = { [idx: number]: T };
+export type Geocode = string;
+export type SourceId = number;
+export type JobId = number;
+export type SyncId = number;

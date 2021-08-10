@@ -1,0 +1,700 @@
+{
+  "supported_functions": ["Conditional", "String", "Date", "Searching in string"],
+  "Conditional": [
+    {
+      "name": "if",
+      "title": "if( condition, then, else )",
+      "description": "If the condition cond evaluates to a non-zero value, returns the result of the expression then, and the result of the expression else, if present, is skipped. If the cond is zero or NULL, then the result of the then expression is skipped and the result of the else expression, if present, is returned.",
+      "example": "if( 2 > 1, 'value A', 'value B')"
+    },
+    {
+      "name": "Ternary Operator",
+      "title": "condition ? then : else",
+      "description": "It works same as if function.",
+      "example": "2 > 1 ? 'value A' : 'value B'"
+    },
+    {
+      "name": "multiIf",
+      "title": "multiIf( condition_1, then_1, condition_2, then_2,..., else)",
+      "description": "It works same as if function. ",
+      "example": "age_group = multiIf( [age] < 20, '<20', [age] < 30, '20-30', '>30')"
+    },
+    {
+      "name": "case",
+      "title": "CASE x WHEN a THEN b WHEN a2 THEN b2 ELSE c",
+      "description": "It works same as multiIf function. "
+    }
+  ],
+  "String": [
+    {
+      "name": "empty",
+      "title": "empty(string): int",
+      "description": "Returns 1 for an empty string or 0 for a non-empty string.",
+      "example": "empty('HelloWorld') == 0"
+    },
+    {
+      "name": "notEmpty",
+      "title": "notEmpty(string): int",
+      "description": "Returns 0 for an empty string or 1 for a non-empty string.",
+      "example": "notEmpty('Hello World') == 1"
+    },
+    {
+      "name": "length",
+      "title": "length(string): long",
+      "description": "Returns the length of a string in bytes (not in characters, and not in code points).",
+      "example": "length('Hello World') == 11"
+    },
+    {
+      "name": "lengthUTF8",
+      "title": "lengthUTF8(string): long",
+      "description": "Returns the length of a string in Unicode code points (not in characters).",
+      "example": "length('Hello World') == 11"
+    },
+    {
+      "name": "char_length",
+      "title": "char_length(string): long",
+      "description": "Returns the length of a string in Unicode code points (not in characters)"
+    },
+    {
+      "name": "character_length",
+      "title": "character_length(string): long",
+      "description": "Returns the length of a string in Unicode code points (not in characters)."
+    },
+    {
+      "name": "lower",
+      "title": "lower(string): string",
+      "description": "Converts ASCII Latin symbols in a string to lowercase.",
+      "example": "lower('Hello World') == 'hello world'"
+    },
+    {
+      "name": "upper",
+      "title": "upper(string): string",
+      "description": "Converts ASCII Latin symbols in a string to uppercase.",
+      "example": "upper('Hello World') == HELLO WORLD"
+    },
+    {
+      "name": "lowerUTF8",
+      "title": "lowerUTF8(string): string",
+      "description": "Converts a string to lowercase, assuming the string contains a set of bytes that make up a UTF-8 encoded text.",
+      "example": "lowerUTF8('Hello World') == 'hello world'"
+    },
+    {
+      "name": "upperUTF8",
+      "title": "upperUTF8(string): string",
+      "description": "Converts a string to uppercase, assuming the string contains a set of bytes that make up a UTF-8 encoded text.",
+      "example": "upperUTF8('Hello World') == HELLO WORLD"
+    },
+    {
+      "name": "isValidUTF8",
+      "title": "isValidUTF8(string): int",
+      "description": "Returns 1, if the set of bytes is valid UTF-8 encoded, otherwise 0."
+    },
+    {
+      "name": "toValidUTF8",
+      "title": "tovalidUTF8(string): string",
+      "description": "Replaces invalid UTF-8 characters by the � (U+FFFD) character. All running in a row invalid characters are collapsed into the one replacement character."
+    },
+    {
+      "name": "repeat",
+      "title": "repeat(string, int)",
+      "description": "Repeats a string as many times as specified and concatenates the replicated values as a single string",
+      "example": "repeat('abc',2) == abcabc"
+    },
+    {
+      "name": "reverse",
+      "title": "reverse(string): string",
+      "description": "Reverses the string (as a sequence of bytes)."
+    },
+    {
+      "name": "reverseUTF8",
+      "title": "reverseUTF8(string): string",
+      "description": "Reverses a sequence of Unicode code points. "
+    },
+    {
+      "name": "format",
+      "description": "Formatting constant pattern with the string listed in the arguments. `pattern` is a simplified Python format pattern. Format string contains “replacement fields” surrounded by curly braces `{}`. Anything that is not contained in braces is considered literal text, which is copied unchanged to the output. If you need to include a brace character in the literal text, it can be escaped by doubling: `{{` and `}}`. Field names can be numbers (starting from zero) or empty (then they are treated as consequence numbers).",
+      "example": "format('{1} {0} {1}', 'World', 'Hello') = Hello World Hello"
+    },
+    {
+      "name": "concat",
+      "title": "concat(string1, string2, ...)",
+      "description": "Concatenates the strings listed in the arguments, without a separator.",
+      "example": "concat('Hello',' ','World') = 'Hello World'"
+    },
+    {
+      "name": "substring",
+      "title": "substring(s, offset, length)",
+      "description": "Returns a substring starting with the byte from the ‘offset’ index that is ‘length’ bytes long. Character indexing starts from one . The ‘offset’ and ‘length’ arguments must be constants."
+    },
+    {
+      "name": "substringUTF8",
+      "title": "substringUTF8(s, offset, length)",
+      "description": "The same as ‘substring’, but for Unicode code points. "
+    },
+    {
+      "name": "appendTrailingCharIfAbsent",
+      "title": "appendTrailingCharIfAbsent(s, c)",
+      "description": "If the ‘s’ string is non-empty and does not contain the ‘c’ character at the end, it appends the ‘c’ character to the end."
+    },
+    {
+      "name": "convertCharset",
+      "title": "convertCharset(s, from, to)",
+      "description": "Returns the string ‘s’ that was converted from the encoding in ‘from’ to the encoding in ‘to’."
+    },
+    {
+      "name": "base64Encode",
+      "description": "Encodes string into base64"
+    },
+    {
+      "name": "base64Decode ",
+      "title": "base64Decode(s)",
+      "description": "Decode base64-encoded string ‘s’ into original string. In case of failure raises an exception."
+    },
+    {
+      "name": "tryBase64Decode",
+      "title": "tryBase64Decode(s)",
+      "description": "Similar to base64Decode, but in case of error an empty string would be returned."
+    },
+    {
+      "name": "endsWith",
+      "title": "endsWith(s, suffix)",
+      "description": "Returns whether to end with the specified suffix. Returns 1 if the string ends with the specified suffix, otherwise it returns 0."
+    },
+    {
+      "name": "startsWith",
+      "title": "startsWith(str, prefix)",
+      "description": "Returns 1 whether string starts with the specified prefix, otherwise it returns 0."
+    },
+    {
+      "name": "trim",
+      "title": "trim([[LEADING|TRAILING|BOTH] trim_character FROM] input_string)",
+      "description": "Removes all specified characters from the start or end of a string.By default removes all consecutive occurrences of common whitespace (ASCII character 32) from both ends of a string.",
+      "example": "trim(BOTH ' ()' FROM '(   Hello, world!   )') = Hello, world!"
+    },
+    {
+      "name": "trimLeft",
+      "title": "trimLeft(input_string)",
+      "description": "Removes all consecutive occurrences of common whitespace (ASCII character 32) from the beginning of a string. It doesn’t remove other kinds of whitespace characters (tab, no-break space, etc.)."
+    },
+    {
+      "name": "trimRight",
+      "title": "trimRight(input_string)",
+      "description": "Removes all consecutive occurrences of common whitespace (ASCII character 32) from the end of a string. It doesn’t remove other kinds of whitespace characters (tab, no-break space, etc.)."
+    },
+    {
+      "name": "trimBoth",
+      "title": "trimBoth(input_string)",
+      "description": "Removes all consecutive occurrences of common whitespace (ASCII character 32) from the end of a string. It doesn’t remove other kinds of whitespace characters (tab, no-break space, etc.)."
+    },
+    {
+      "name": "CRC32",
+      "title": "CRC32(s)",
+      "description": "Returns the CRC32 checksum of a string, using CRC-32-IEEE 802.3 polynomial and initial value 0xffffffff."
+    },
+    {
+      "name": "CRC32IEEE",
+      "title": "CRC32IEEE(s)",
+      "description": "Returns the CRC32 checksum of a string, using CRC-32-IEEE 802.3 polynomial."
+    },
+    {
+      "name": "CRC64",
+      "title": "CRC64(s)",
+      "description": "Returns the CRC64 checksum of a string, using CRC-64-ECMA polynomial."
+    },
+    {
+      "name": "normalizeQuery",
+      "title": "normalizeQuery(s)",
+      "description": "Replaces literals, sequences of literals and complex aliases with placeholders."
+    },
+    {
+      "name": "normalizedQueryHash",
+      "title": "normalizedQueryHash(String)",
+      "description": "Returns identical 64bit hash values without the values of literals for similar queries. It helps to analyze query log."
+    },
+    {
+      "name": "encodeXMLComponent",
+      "title": "encodeXMLComponent(s)",
+      "description": "Escapes characters to place string into XML text node or attribute."
+    },
+    {
+      "name": "decodeXMLComponent",
+      "title": "decodeXMLComponent(s)",
+      "description": "Replaces XML predefined entities with characters. Predefined entities are &quot; &amp; &apos; &gt; &lt;This function also replaces numeric character references with Unicode characters. Both decimal (like &#10003;) and hexadecimal (&#x2713;) forms are supported."
+    },
+    {
+      "name": "extractTextFromHTML",
+      "title": "extractTextFromHTML(htmlString)",
+      "description": ""
+    }
+  ],
+  "Date": [
+    {
+      "name": "toTimeZone",
+      "title": "toTimeZone",
+      "description": "Convert time or date and time to the specified time zone."
+    },
+    {
+      "name": "toYear",
+      "title": "toYear",
+      "description": "Converts a date or date with time to a number containing the year number (AD)."
+    },
+    {
+      "name": "toQuarter",
+      "title": "toQuarter",
+      "description": "Converts a date or date with time to a number containing the quarter number."
+    },
+    {
+      "name": "toMonth",
+      "title": "toMonth",
+      "description": "Converts a date or date with time to a number containing the month number (1-12)."
+    },
+    {
+      "name": "toDayOfYear",
+      "title": "toDayOfYear",
+      "description": "Converts a date or date with time to a number containing the number of the day of the year (1-366)."
+    },
+    {
+      "name": "toDayOfMonth",
+      "title": "",
+      "description": "Converts a date or date with time to a number containing the number of the day of the month (1-31)."
+    },
+    {
+      "name": "toDayOfWeek",
+      "title": "",
+      "description": "Converts a date or date with time to a number containing the number of the day of the week (Monday is 1, and Sunday is 7)."
+    },
+    {
+      "name": "toHour",
+      "title": "",
+      "description": "Converts a date with time to a  number containing the number of the hour in 24-hour time (0-23)"
+    },
+    {
+      "name": "toMinute",
+      "title": "",
+      "description": "Converts a date with time to a number containing the number of the minute of the hour (0-59)."
+    },
+    {
+      "name": "toSecond",
+      "title": "",
+      "description": "Converts a date with time to a UInt8 number containing the number of the second in the minute (0-59).Leap seconds are not accounted for."
+    },
+    {
+      "name": "toUnixTimestamp",
+      "title": "",
+      "description": "For DateTime argument: converts value to the number with type UInt32 -- Unix Timestamp "
+    },
+    {
+      "name": "toStartOfYear",
+      "title": "",
+      "description": "Rounds down a date or date with time to the first day of the year.Returns the date."
+    },
+    {
+      "name": "toStartOfISOYear",
+      "title": "",
+      "description": "Rounds down a date or date with time to the first day of ISO year.Returns the date."
+    },
+    {
+      "name": "toStartOfQuarter",
+      "title": "",
+      "description": "Rounds down a date or date with time to the first day of the quarter.The first day of the quarter is either 1 January, 1 April, 1 July, or 1 October.Returns the date."
+    },
+    {
+      "name": "toStartOfMonth",
+      "title": "",
+      "description": "Rounds down a date or date with time to the first day of the month.Returns the date."
+    },
+    {
+      "name": "toMonday",
+      "title": "",
+      "description": "Rounds down a date or date with time to the nearest Monday.Returns the date."
+    },
+    {
+      "name": "toStartOfWeek",
+      "title": "toStartOfWeek(t[,mode)",
+      "description": "Rounds down a date or date with time to the nearest Sunday or Monday by mode.Returns the date.The mode argument works exactly like the mode argument to toWeek(). For the single-argument syntax, a mode value of 0 is used."
+    },
+    {
+      "name": "toStartOfDay",
+      "title": "",
+      "description": "Rounds down a date with time to the start of the day."
+    },
+    {
+      "name": "toStartOfHour",
+      "title": "",
+      "description": "Rounds down a date with time to the start of the hour."
+    },
+    {
+      "name": "toStartOfMinute",
+      "title": "",
+      "description": "Rounds down a date with time to the start of the minute."
+    },
+    {
+      "name": "toStartOfSecond",
+      "title": "",
+      "description": "Truncates sub-seconds."
+    },
+    {
+      "name": "toStartOfFiveMinute",
+      "title": "",
+      "description": "Rounds down a date with time to the start of the five-minute interval."
+    },
+    {
+      "name": "toStartOfTenMinutes",
+      "title": "",
+      "description": "Rounds down a date with time to the start of the ten-minute interval."
+    },
+    {
+      "name": "toStartOfInterval",
+      "title": "toStartOfInterval(time_or_data, INTERVAL x unit [, time_zone])",
+      "description": "This is a generalization of other functions named toStartOf*. For example,toStartOfInterval(t, INTERVAL 1 year) returns the same as toStartOfYear(t)"
+    },
+    {
+      "name": "toTime",
+      "title": "",
+      "description": "Converts a date with time to a certain fixed date, while preserving the time."
+    },
+    {
+      "name": "toRelativeYearNum",
+      "title": "",
+      "description": "Converts a date with time or date to the number of the year, starting from a certain fixed point in the past."
+    },
+    {
+      "name": "toRelativeQuarterNum",
+      "title": "",
+      "description": "Converts a date with time or date to the number of the quarter, starting from a certain fixed point in the past."
+    },
+    {
+      "name": "toRelativeMonthNum",
+      "title": "",
+      "description": "Converts a date with time or date to the number of the month, starting from a certain fixed point in the past."
+    },
+    {
+      "name": "toRelativeWeekNum",
+      "title": "",
+      "description": "Converts a date with time or date to the number of the week, starting from a certain fixed point in the past."
+    },
+    {
+      "name": "toRelativeDayNum",
+      "title": "",
+      "description": "Converts a date with time or date to the number of the day, starting from a certain fixed point in the past."
+    },
+    {
+      "name": "toRelativeHourNum",
+      "title": "",
+      "description": "Converts a date with time or date to the number of the hour, starting from a certain fixed point in the past."
+    },
+    {
+      "name": "toRelativeMinuteNum",
+      "title": "",
+      "description": "Converts a date with time or date to the number of the minute, starting from a certain fixed point in the past."
+    },
+    {
+      "name": "toRelativeSecondNum",
+      "title": "",
+      "description": "Converts a date with time or date to the number of the second, starting from a certain fixed point in the past."
+    },
+    {
+      "name": "toISOYear",
+      "title": "",
+      "description": "Converts a date or date with time to a number containing the ISO Year number."
+    },
+    {
+      "name": "toISOWeek",
+      "title": "",
+      "description": "Converts a date or date with time to a number containing the ISO Week number."
+    },
+    {
+      "name": "toWeek",
+      "title": "toWeek(date, [, mode][, Timezone])",
+      "description": ""
+    },
+    {
+      "name": "toYearWeek",
+      "title": "toYearWeek(date[,mode])",
+      "description": "Returns year and week for a date. The year in the result may be different from the year in the date argument for the first and the last week of the year.The mode argument works exactly like the mode argument to toWeek(). For the single-argument syntax, a mode value of 0 is used."
+    },
+    {
+      "name": "date_trunc",
+      "title": "date_trunc(unit, value[, timezone])",
+      "description": "Truncates date and time data to the specified part of date. unit is second, minute, hour, day, week, month, quarter or year."
+    },
+    {
+      "name": "date_add",
+      "title": "date_add(unit, value, date)",
+      "description": "Adds the time interval or date interval to the provided date or date with time."
+    },
+    {
+      "name": "date_diff",
+      "title": "date_diff('unit', startdate, enddate, [timezone])",
+      "description": "Returns the difference between two dates or dates with time values.",
+      "example": "dateDiff('hour', toDateTime('2018-01-01 22:00:00'), toDateTime('2018-01-02 23:00:00'))"
+    },
+    {
+      "name": "date_sub",
+      "title": "date_sub(unit, value, date)",
+      "description": "Subtracts the time interval or date interval from the provided date or date with time.",
+      "example": "date_sub(YEAR, 3, toDate('2018-01-01'))"
+    },
+    {
+      "name": "timestamp_add",
+      "title": "timestamp_add(date, INTERVAL value unit)",
+      "description": "Adds the specified time value with the provided date or date time value."
+    },
+    {
+      "name": "timestamp_sub",
+      "title": "timestamp_sub(unit, value, date)",
+      "description": "Subtracts the time interval from the provided date or date with time.",
+      "example": "timestamp_sub(MONTH, 5, toDateTime('2018-12-18 01:02:03'))"
+    },
+    {
+      "name": "now",
+      "title": "now([timezone])",
+      "description": "Returns the current date and time."
+    },
+    {
+      "name": "today",
+      "title": "",
+      "description": "Accepts zero arguments and returns the current date at one of the moments of request execution.The same as ‘toDate(now())’."
+    },
+    {
+      "name": "yesterday",
+      "title": "",
+      "description": "Accepts zero arguments and returns yesterday’s date at one of the moments of request execution.The same as ‘today() - 1’."
+    },
+    {
+      "name": "toYYYYMM",
+      "title": "",
+      "description": "Converts a date or date with time to a number containing the year and month number (YYYY * 100 + MM)."
+    },
+    {
+      "name": "toYYYYMMDD",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "toYYYYMMDDhhmmss",
+      "title": "",
+      "description": ""
+    },
+    {
+      "name": "addYears",
+      "title": "",
+      "description": "Function adds a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime. "
+    },
+    {
+      "name": "addMonths",
+      "title": "",
+      "description": "Function adds a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime. "
+    },
+    {
+      "name": "addWeeks",
+      "title": "",
+      "description": "Function adds a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime. "
+    },
+    {
+      "name": "addDays",
+      "title": "",
+      "description": "Function adds a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime. "
+    },
+    {
+      "name": "addHours",
+      "title": "",
+      "description": "Function adds a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime. "
+    },
+    {
+      "name": "addMinutes",
+      "title": "",
+      "description": "Function adds a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime. "
+    },
+    {
+      "name": "addSeconds",
+      "title": "",
+      "description": "Function adds a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime. "
+    },
+    {
+      "name": "addQuarters",
+      "title": "",
+      "description": "Function adds a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime. "
+    },
+    {
+      "name": "subtractYears",
+      "title": "",
+      "description": "Function subtract a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime."
+    },
+    {
+      "name": "subtractMonths",
+      "title": "",
+      "description": "Function subtract a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime."
+    },
+    {
+      "name": "subtractWeeks",
+      "title": "",
+      "description": "Function subtract a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime."
+    },
+    {
+      "name": "subtractDays",
+      "title": "",
+      "description": "Function subtract a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime."
+    },
+    {
+      "name": "subtractHours",
+      "title": "",
+      "description": "Function subtract a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime."
+    },
+    {
+      "name": "subtractMinutes",
+      "title": "",
+      "description": "Function subtract a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime."
+    },
+    {
+      "name": "subtractSeconds",
+      "title": "",
+      "description": "Function subtract a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime."
+    },
+    {
+      "name": "subtractQuarters",
+      "title": "",
+      "description": "Function subtract a Date/DateTime interval to a Date/DateTime and then return the Date/DateTime."
+    }
+  ],
+  "Searching in string": [
+    {
+      "name": "position",
+      "title": "position(haystack, needle)",
+      "description": "Searches for the substring `needle` in the string `haystack`.Returns the position (in bytes) of the found substring in the string, starting from 1.",
+      "example": "position('Hello, world!', '!') = 13"
+    },
+    {
+      "name": "positionCaseInsensitive",
+      "title": "positionCaseInsensitive(haystack, needle[, start_pos])",
+      "description": "The same as position returns the position (in bytes) of the found substring in the string, starting from 1. Use the function for a case-insensitive search. Works under the assumption that the string contains a set of bytes representing a single-byte encoded text. If this assumption is not met and a character can’t be represented using a single byte, the function doesn’t throw an exception and returns some unexpected result. If character can be represented using two bytes, it will use two bytes and so on.",
+      "example": "positionCaseInsensitive('Hello, world!', 'hello')"
+    },
+    {
+      "name": "positionUTF8",
+      "title": "positionUTF8(haystack, needle[, start_pos])",
+      "description": "Returns the position (in Unicode points) of the found substring in the string, starting from 1.",
+      "example": "positionUTF8('Hello, world!', '!') = 13"
+    },
+    {
+      "name": "positionCaseInsensitiveUTF8",
+      "title": "positionCaseInsensitiveUTF8(haystack, needle[, start_pos])",
+      "description": "same as positionUTF8 but is case-insensitive",
+      "example": "positionCaseInsensitiveUTF8('Hello, world!', '!') = 13"
+    },
+    {
+      "name": "match",
+      "title": "match(haystack, pattern)",
+      "description": "Checks whether the string matches the pattern regular expression. ",
+      "example": ""
+    },
+    {
+      "name": "multiMatchAny",
+      "title": "multiMatchAny(haystack, [pattern1, pattern2, …, patternn])",
+      "description": "The same as match, but returns 0 if none of the regular expressions are matched and 1 if any of the patterns matches. It uses hyperscan library. For patterns to search substrings in a string, it is better to use multiSearchAny since it works much faster.",
+      "example": ""
+    },
+    {
+      "name": "multiMatchAnyIndex",
+      "title": "multiMatchAnyIndex(haystack, [pattern1, pattern2, …, patternn])",
+      "description": "The same as multiMatchAny, but returns any index that matches the haystack.",
+      "example": ""
+    },
+    {
+      "name": "extract",
+      "title": "extract(haystack, pattern)",
+      "description": "Extracts a fragment of a string using a regular expression. If ‘haystack’ doesn’t match the ‘pattern’ regex, an empty string is returned. If the regex doesn’t contain subpatterns, it takes the fragment that matches the entire regex. Otherwise, it takes the fragment that matches the first subpattern.",
+      "example": ""
+    },
+    {
+      "name": "extractAll",
+      "title": "extractAll(haystack, pattern)",
+      "description": "Extracts all the fragments of a string using a regular expression. If ‘haystack’ doesn’t match the ‘pattern’ regex, an empty string is returned. Returns an array of strings consisting of all matches to the regex. In general, the behavior is the same as the ‘extract’ function (it takes the first subpattern, or the entire expression if there isn’t a subpattern).",
+      "example": ""
+    },
+    {
+      "name": "extractAllGroupsHorizontal",
+      "title": "extractAllGroupsHorizontal(haystack, pattern)",
+      "description": "Matches all groups of the haystack string using the pattern regular expression. Returns an array of arrays, where the first array includes all fragments matching the first group, the second array - matching the second group, etc.",
+      "example": ""
+    },
+    {
+      "name": "extractAllGroupsVertical",
+      "title": "extractAllGroupsVertical(haystack, pattern)",
+      "description": "Matches all groups of the haystack string using the pattern regular expression. Returns an array of arrays, where each array includes matching fragments from every group. Fragments are grouped in order of appearance in the haystack.",
+      "example": ""
+    },
+    {
+      "name": "like",
+      "title": "like(haystack, pattern),",
+      "description": "Checks whether a string matches a simple regular expression.The regular expression can contain the metasymbols `%` and `_`.`%` indicates any quantity of any bytes (including zero characters).",
+      "example": ""
+    },
+    {
+      "name": "notLike",
+      "title": "notLike(haystack, pattern)",
+      "description": "The same thing as ‘like’, but negative",
+      "example": ""
+    },
+    {
+      "name": "ilike",
+      "title": "ilike(haystack,pattern)",
+      "description": "Case insensitive variant of like function",
+      "example": ""
+    },
+    {
+      "name": "ngramDistance",
+      "title": "ngramDistance(haystack, needle)",
+      "description": "Calculates the 4-gram distance between haystack and needle: counts the symmetric difference between two multisets of 4-grams and normalizes it by the sum of their cardinalities",
+      "example": ""
+    },
+    {
+      "name": "ngramSearch",
+      "title": "ngramSearch(haystack, needle)",
+      "description": "Same as ngramDistance but calculates the non-symmetric difference between needle and haystack – the number of n-grams from needle minus the common number of n-grams normalized by the number of needle n-grams. The closer to one, the more likely needle is in the haystack. Can be useful for fuzzy string search.",
+      "example": ""
+    },
+    {
+      "name": "countSubstrings",
+      "title": "countSubstrings(haystack, needle[, start_pos])",
+      "description": "Returns the number of substring occurrences.",
+      "example": "countSubstrings('aaaa', 'aa')"
+    },
+    {
+      "name": "countSubstringsCaseInsensitive",
+      "title": "",
+      "description": "same as countSubstrings but case insensitive.",
+      "example": ""
+    },
+    {
+      "name": "countSubstringsCaseInsensitiveUTF8",
+      "title": "",
+      "description": "",
+      "example": ""
+    },
+    {
+      "name": "countMatches",
+      "title": "countMatches(haystack, pattern)",
+      "description": "Returns the number of regular expression matches for a pattern in a haystack.",
+      "example": "countMatches('foobar.com', 'o+')"
+    },
+    {
+      "name": "like",
+      "title": "like(haystack, pattern)",
+      "description": "Checks whether a string matches a simple regular expression. The regular expression can contain the metasymbols % and _. % indicates any quantity of any bytes (including zero characters). _ indicates any one byte.",
+      "example": "like('foobar.com', '%bar')"
+    },
+    {
+      "name": "notLike",
+      "title": "notLike(haystack, pattern)",
+      "description": "Same thing as like but negative.",
+      "example": "ilike('foobar.com', '%bar')"
+    },
+    {
+      "name": "ilike",
+      "title": "ilike(haystack, pattern)",
+      "description": "case insensitive variant of like function.",
+      "example": "ilike('foobar.com', '%bar')"
+    }
+  ]
+}

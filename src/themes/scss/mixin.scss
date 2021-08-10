@@ -1,0 +1,136 @@
+@mixin semi-bold-text {
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: default;
+}
+
+@mixin bold-text {
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  color: var(--text-color);
+  cursor: default;
+}
+
+@mixin bold-text-14 {
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  color: var(--text-color);
+  cursor: default;
+  font-size: 14px;
+}
+
+@mixin regular-text {
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  color: var(--text-color);
+  cursor: default;
+}
+
+@mixin regular-text12-unselect {
+  @include regular-text();
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  font-size: 12px;
+}
+
+@mixin regular-text-14 {
+  @include regular-text();
+  font-size: 14px;
+  letter-spacing: 0.6px;
+}
+
+@mixin semi-bold-14() {
+  @include semi-bold-text();
+  font-size: 14px;
+  letter-spacing: 0.6px;
+}
+
+@mixin bold-text-16() {
+  @include bold-text();
+  font-size: 16px;
+  line-height: 1.4px;
+  letter-spacing: 0.4px;
+}
+
+@mixin ic-16 {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+@mixin ic-32 {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+@mixin ic-40 {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+@mixin custom-td-after {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  border-bottom: 1px solid var(--primary);
+  content: '';
+  margin: 0;
+  padding: 0;
+}
+
+@mixin text-link {
+  @include regular-text;
+  color: $accentColor;
+  text-decoration: underline;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+@mixin panel {
+  background-color: var(--charcoal-2);
+  border-radius: 4px;
+}
+
+@mixin item {
+  background-color: var(--charcoal);
+  border-radius: 4px;
+}
+
+@mixin icon-128 {
+  width: 128px;
+  height: 128px;
+}
+
+@import '~@/themes/scss/mixins/alert.scss';
+@import '~@/themes/scss/mixins/badges.scss';
+@import '~@/themes/scss/mixins/background-variant.scss';
+@import '~@/themes/scss/mixins/buttons.scss';
+@import '~@/themes/scss/mixins/forms.scss';
+@import '~@/themes/scss/mixins/icon.scss';
+@import '~@/themes/scss/mixins/popovers.scss';
+@import '~@/themes/scss/mixins/page-header.scss';
+@import '~@/themes/scss/mixins/vendor-prefixes.scss';
+@import '~@/themes/scss/mixins/opacity.scss';
+@import '~@/themes/scss/mixins/modals.scss';
+@import '~@/themes/scss/mixins/inputs.scss';
+@import '~@/themes/scss/mixins/dropdown.scss';
+@import '~@/themes/scss/mixins/wizard.scss';
